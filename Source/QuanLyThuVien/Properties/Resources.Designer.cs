@@ -243,16 +243,6 @@ namespace QuanLyThuVien.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pexels_photo_590493 {
-            get {
-                object obj = ResourceManager.GetObject("pexels-photo-590493", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap school_learn_study_subject_history_512 {
             get {
                 object obj = ResourceManager.GetObject("school-learn-study-subject-history-512", resourceCulture);
