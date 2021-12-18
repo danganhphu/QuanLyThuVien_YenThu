@@ -26,8 +26,7 @@ namespace QuanLyThuVien.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7UL2AIKB\\THANHTIN;Initial Catalog=QuanLyThuVien;Integrated Sec" +
-            "urity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANHPHU\\SQLEXPRESS;Initial Catalog=QLThuVien;Integrated Security=True")]
         public string QuanLyThuVienConnectionString {
             get {
                 return ((string)(this["QuanLyThuVienConnectionString"]));

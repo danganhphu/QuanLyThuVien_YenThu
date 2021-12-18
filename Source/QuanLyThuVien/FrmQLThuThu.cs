@@ -12,25 +12,30 @@ namespace QuanLyThuVien
 {
     public partial class FrmQLThuThu : Form
     {
-        DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+        private DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+
         public FrmQLThuThu()
         {
             InitializeComponent();
         }
-        
-        private bool checkPhoneNumber(string phoneNumber) {
+
+        private bool checkPhoneNumber(string phoneNumber)
+        {
             var flag = false;
-            if (phoneNumber != "") {
+            if (phoneNumber != "")
+            {
                 var firstNumber = phoneNumber.Substring(0, 2);
                 if (firstNumber == "09" || firstNumber == "08" || firstNumber == "07" || firstNumber == "06" || firstNumber == "05" || firstNumber == "04" || firstNumber == "03")
                 {
-                    if (phoneNumber.Length == 10) {
+                    if (phoneNumber.Length == 10)
+                    {
                         flag = true;
                     }
                 }
                 else if (firstNumber == "01" || firstNumber == "02")
                 {
-                    if (phoneNumber.Length == 11) {
+                    if (phoneNumber.Length == 11)
+                    {
                         flag = true;
                     }
                 }
@@ -48,13 +53,14 @@ namespace QuanLyThuVien
                            a.GioiTinh,
                            a.DiaChi,
                            a.NgaySinh,
-                           a.SoDienThoai,  
+                           a.SoDienThoai,
                        };
             dataGridViewThuThu.DataSource = load;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             btnThem.Enabled = true;
         }
+
         private void ClearTxt()
         {
             txtMaTT.Clear();
@@ -112,7 +118,8 @@ namespace QuanLyThuVien
                     MessageBox.Show("Số điện thoại không đúng định dạng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                else {
+                else
+                {
                     ThuThu tt = db.ThuThus.SingleOrDefault(n => n.MaTT.Equals(txtMaTT.Text.Trim()));
                     tt.Hoten = txtHoTen.Text.Trim();
                     if (rbNam.Checked)
@@ -143,8 +150,9 @@ namespace QuanLyThuVien
             }
             else
             {
-                if (dateTimePickerNgaySinh.Value.Date >= DateTime.Now.Date) {
-                    MessageBox.Show("Ngày sinh không hợp lệ vui lòng thử lại!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (dateTimePickerNgaySinh.Value.Date >= DateTime.Now.Date)
+                {
+                    MessageBox.Show("Ngày sinh không hợp lệ vui lòng thử lại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else if (!rbNam.Checked && !rbNu.Checked)
                 {

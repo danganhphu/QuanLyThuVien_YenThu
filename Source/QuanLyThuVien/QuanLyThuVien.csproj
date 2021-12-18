@@ -129,6 +129,7 @@
     <Compile Include="Model.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <None Include="DBQuanLyThuVien.dbml.layout">
       <DependentUpon>DBQuanLyThuVien.dbml</DependentUpon>
     </None>
@@ -199,6 +200,7 @@
   <ItemGroup>
     <Content Include="Images\018_317_door_exit_logout-5122.png" />
     <Content Include="Images\19085-200.png" />
+    <None Include="Resources\printPreviewDialog1.Icon.ico" />
     <None Include="Resources\librarymain1.jpg" />
     <None Include="Resources\bgDangNhap.jpg" />
     <None Include="Resources\sevlibraryroom.gif" />

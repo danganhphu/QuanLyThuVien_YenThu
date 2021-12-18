@@ -12,7 +12,8 @@ namespace QuanLyThuVien
 {
     public partial class FrmQuyDinh : Form
     {
-        DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+        private DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+
         public FrmQuyDinh()
         {
             InitializeComponent();
@@ -39,7 +40,8 @@ namespace QuanLyThuVien
             {
                 MessageBox.Show("Vui lòng chọn loại quy định cần sửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else {
+            else
+            {
                 QuyDinh dg = db.QuyDinhs.SingleOrDefault(n => n.MaQD.Equals(int.Parse(txtMaQuyDinh.Text.ToString())));
                 dg.SoLuongQD = int.Parse(txtSoLuong.Text.Trim());
                 db.SubmitChanges();

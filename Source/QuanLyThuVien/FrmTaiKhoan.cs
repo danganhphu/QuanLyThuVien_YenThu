@@ -12,7 +12,8 @@ namespace QuanLyThuVien
 {
     public partial class FrmTaiKhoan : Form
     {
-        DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+        private DBQuanLyThuVienDataContext db = new DBQuanLyThuVienDataContext();
+
         public FrmTaiKhoan()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace QuanLyThuVien
                     ThuThu checkTonTaiMa = db.ThuThus.SingleOrDefault(n => n.MaTT.Equals(cbMaTT.Text.Trim()));
                     if (checkMaTT != null)
                     {
-                        MessageBox.Show("Mã thủ thư "+ cbMaTT.Text.ToString() +" đã được cấp tài khoản. Vui lòng chọn mã thủ thư khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Mã thủ thư " + cbMaTT.Text.ToString() + " đã được cấp tài khoản. Vui lòng chọn mã thủ thư khác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else if (checkMaTT == null)
                     {
@@ -163,7 +164,8 @@ namespace QuanLyThuVien
                 {
                     MessageBox.Show("Sửa thông tin tài khoản cho thủ thư vui lòng chọn loại User!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (!btnthem.Enabled || cbMaTT.Enabled) {
+                else if (!btnthem.Enabled || cbMaTT.Enabled)
+                {
                     if (!cbMaTT.Enabled)
                     {
                         TaiKhoan tk = db.TaiKhoans.SingleOrDefault(n => n.MaTK.Equals(txtMaTK.Text.Trim()));
@@ -274,7 +276,8 @@ namespace QuanLyThuVien
 
         private void cbtype_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!txtMaTK.Text.Trim().Length.Equals(0)) {
+            if (!txtMaTK.Text.Trim().Length.Equals(0))
+            {
                 if (!btnthem.Enabled)
                 {
                     if (cbtype.Text.Equals("User"))
@@ -287,7 +290,8 @@ namespace QuanLyThuVien
                                 cbMaTT.Text = "";
                                 cbMaTT.Enabled = true;
                             }
-                            else {
+                            else
+                            {
                                 cbMaTT.Text = tk.MaTT.ToString();
                                 cbMaTT.Enabled = false;
                             }
